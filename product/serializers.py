@@ -3,6 +3,7 @@ from .models import *
 
 
 class BurgerSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Burgers
         fields = '__all__'
@@ -37,6 +38,7 @@ class BurgerSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    burgers = BurgerSerializer(many=True)
     class Meta:
         model = Category
         fields = '__all__'
