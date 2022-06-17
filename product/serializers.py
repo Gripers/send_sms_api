@@ -39,6 +39,7 @@ class BurgerSerializer(serializers.ModelSerializer):
 
 class CategorySerializer(serializers.ModelSerializer):
     burgers = BurgerSerializer(many=True)
+    
     class Meta:
         model = Category
         fields = '__all__'
